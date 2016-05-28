@@ -16,7 +16,6 @@ public class createDots : MonoBehaviour {
 	void Start () {
 		//so we get a first batch
 		timer = secondsBetweenRounds;
-		Debug.Log (map.GetComponent<Renderer> ().bounds.size);
 	}
 	
 	// Update is called once per frame
