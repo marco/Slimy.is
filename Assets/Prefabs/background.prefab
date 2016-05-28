@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createStartingAIScript: {fileID: 11432376}
-  headsPrefab: {fileID: 0}
+  headsPrefab: {fileID: 107930, guid: a34274621fdd2428fa24c3010c4cece1, type: 2}
   startingPosition: {x: 0, y: 0}
 --- !u!114 &11417550
 MonoBehaviour:
@@ -118,6 +118,7 @@ MonoBehaviour:
   - Belly Button
   - Memes
   zValToAddToName: 0
+  yValToAddToName: 1
   namePrefab: {fileID: 195154, guid: cc67a009a555240ce92cbd7e21368631, type: 2}
 --- !u!114 &11432376
 MonoBehaviour:
@@ -150,7 +151,7 @@ MonoBehaviour:
   - {r: .217051774, g: .294928581, b: .998369336, a: 1}
   - {r: .614500999, g: 0, b: .996567726, a: 1}
   - {r: .126284167, g: .988620162, b: .994697094, a: 1}
-  headsPrefab: {fileID: 148012, guid: 3727cd06ee87349fd9dfa3fe432e5a5e, type: 2}
+  headsPrefab: {fileID: 107930, guid: a34274621fdd2428fa24c3010c4cece1, type: 2}
   namePrefab: {fileID: 195154, guid: cc67a009a555240ce92cbd7e21368631, type: 2}
   amountOfAIPerRound: 2
   secondsBetweenRounds: 8

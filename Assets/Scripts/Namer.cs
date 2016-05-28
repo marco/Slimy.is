@@ -8,6 +8,7 @@ public class Namer : MonoBehaviour {
 	public List<string> adjectivesList;
 	public List<string> nounsList;
 	public float zValToAddToName;
+	public float yValToAddToName;
 	public GameObject namePrefab;
 
 	// returns a random combination
@@ -25,7 +26,7 @@ public class Namer : MonoBehaviour {
 	}
 	public void addNameTo(string nameToAdd, GameObject toAddTo){
 			//gets position for name (with added z so it actually shows up)
-			Vector3 namePosition = new Vector3 (toAddTo.GetComponent<Transform> ().position.x, toAddTo.GetComponent<Transform> ().position.y, toAddTo.GetComponent<Transform> ().position.z + zValToAddToName);
+			Vector3 namePosition = new Vector3 (toAddTo.GetComponent<Transform> ().position.x, toAddTo.GetComponent<Transform> ().position.y + yValToAddToName, toAddTo.GetComponent<Transform> ().position.z + zValToAddToName);
 			//instantiates name
 			GameObject newName = (GameObject)Instantiate (namePrefab, namePosition, Quaternion.identity);
 			//sets sorting layer over Sprites
