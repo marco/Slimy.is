@@ -7,8 +7,7 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 478214}
-  - 212: {fileID: 21260482}
+  - 224: {fileID: 22463496}
   - 58: {fileID: 5823156}
   - 50: {fileID: 5000900}
   - 114: {fileID: 11477050}
@@ -18,6 +17,8 @@ GameObject:
   - 114: {fileID: 11410724}
   - 114: {fileID: 11479086}
   - 114: {fileID: 11452606}
+  - 222: {fileID: 22258402}
+  - 212: {fileID: 21260482}
   m_Layer: 8
   m_Name: headCircle
   m_TagString: Untagged
@@ -25,18 +26,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &478214
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148012}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.84338069, y: .957366824, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
 --- !u!50 &5000900
 Rigidbody2D:
   serializedVersion: 2
@@ -121,7 +110,7 @@ MonoBehaviour:
   AIMoverScript: {fileID: 11425064}
   boostMultiplier: 2
   currentBoost: 1
-  minimumScoreToBoost: 0
+  minimumScoreToBoost: 5
   scorekeeperScript: {fileID: 11452606}
 --- !u!114 &11452606
 MonoBehaviour:
@@ -137,8 +126,8 @@ MonoBehaviour:
   currentScore: 0
   createTailsScript: {fileID: 11477050}
   scoreForNewTail: 5
-  secondsBetweenBoostPenalty: 1
-  boostPenalty: 1
+  secondsBetweenBoostPenalty: .200000003
+  boostPenalty: 2
   headAndTailMoverScript: {fileID: 11436978}
 --- !u!114 &11477050
 MonoBehaviour:
@@ -151,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f755e3c51cb482bb50d3b0cda7fca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumParts: 18
+  minimumParts: 5
   partsList: []
   tailsPrefab: {fileID: 122354, guid: 16c962a1ef7c448769473cd46b8b440e, type: 2}
   newTailOffset: .5
@@ -208,6 +197,29 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3ab105001c0fb4f1a849d9a47bca88f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!222 &22258402
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148012}
+--- !u!224 &22463496
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -2.84338069, y: .957366824}
+  m_SizeDelta: {x: 5, y: 5}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -221,7 +233,7 @@ Prefab:
       objectReference: {fileID: 122354, guid: 16c962a1ef7c448769473cd46b8b440e, type: 2}
     - target: {fileID: 0}
       propertyPath: minimumParts
-      value: 18
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
@@ -393,11 +405,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: boostPenalty
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: secondsBetweenBoostPenalty
-      value: 1
+      value: .200000003
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: currentBoost
@@ -406,6 +418,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: boostMultiplier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Text
+      value: oijaosidjf o
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: minimumScoreToBoost
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

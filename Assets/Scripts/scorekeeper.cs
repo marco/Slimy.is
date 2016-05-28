@@ -28,7 +28,7 @@ public class scorekeeper : MonoBehaviour {
 		//sees if there are extra score that havent been added to our tail yet
 		if (currentScore - scoreForNewTail >= lastCheckedScore) {
 			//makes the NEW highest score
-			lastCheckedScore = currentScore;
+			lastCheckedScore += scoreForNewTail;
 			//makes the new tail
 			createTailsScript.createANewTail();
 		}

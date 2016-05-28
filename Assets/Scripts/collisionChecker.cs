@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-
 public class collisionChecker : MonoBehaviour {
 
 	public createTails createTailsScript;
 	private List<GameObject> currentHeadPartsList; 
-	public playerDeathAction playerDeathActionScript;
+//	public playerDeathAction playerDeathActionScript;
 	public GameObject background;
 	public GameObject headPrefab;
 	public createChunks createChunksScript;
@@ -87,13 +86,20 @@ public class collisionChecker : MonoBehaviour {
 	void thisKilled(){
 		if(this.gameObject.tag == "AI"){
 			//get the current tails and pass them into this function to make chunks at their location
-			createChunksScript.createChunksInList(currentHeadPartsList);
+			createChunksScript.createChunksInListWithColor(currentHeadPartsList, this.GetComponent<SpriteRenderer>().color);
 			Destroy(this.gameObject);
 		}
 		else if(this.gameObject.tag == "player"){
 			Destroy(this.gameObject);
-			//game over!!!
-			//Application.LoadLevel(
+			//set saved last score as this score
+			PlayerPrefs.SetInt("lastScore", this.GetComponent<scorekeeper>().currentScore);
+			//if the last score is higher than the highscore
+			if(PlayerPrefs.GetInt("lastScore") > PlayerPrefs.GetInt("highScore")){
+				//set the highscore to the last score
+				PlayerPrefs.SetInt("highScore", PlayerPrefs.GetInt("lastScore"));
+			}
+			//go to scene
+			Application.LoadLevel("GameOver");
 		}
 		//go through all of our tails
 		for(int p = 0; p < currentHeadPartsList.Count; p++){

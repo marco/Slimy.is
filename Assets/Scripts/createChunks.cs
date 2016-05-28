@@ -18,11 +18,12 @@ public class createChunks : MonoBehaviour {
 	
 	}
 
-	public void createChunksInList(List<GameObject> partsList){
+	public void createChunksInListWithColor(List<GameObject> partsList, Color theColor){
 		for (int p = 0; p < partsList.Count; p++) {
 			GameObject newChunk = (GameObject)Instantiate (chunkPrefab, partsList[p].gameObject.GetComponent<Transform>().position, Quaternion.identity);
 			newChunk.gameObject.tag = "chunk";
 			chunkList.Add (newChunk);
+			newChunk.GetComponent<SpriteRenderer>().color = theColor;
 		}
 	}
 
