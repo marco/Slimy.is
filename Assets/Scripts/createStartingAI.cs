@@ -72,6 +72,8 @@ public class createStartingAI : MonoBehaviour {
 		GameObject newHead = (GameObject)Instantiate (headsPrefab, currentPosition, Quaternion.identity);
 		newHead.gameObject.tag = "AI";
 		AIList.Add (newHead);
+		//adds to part list
+		newHead.GetComponent<createTails> ().partsList.Add (newHead);
 		//rotates (90 because that is how tail faces at start)
 		newHead.gameObject.GetComponent<Transform> ().eulerAngles = new Vector3 (0, 0, 90);
 		//scores

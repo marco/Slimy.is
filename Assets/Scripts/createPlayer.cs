@@ -23,12 +23,13 @@ public class createPlayer : MonoBehaviour {
 		//creates head & makes it a GameObject & tag
 		GameObject newHead = Instantiate (headsPrefab, currentPosition, Quaternion.identity) as GameObject;
 		newHead.gameObject.tag = "player";
+		//adds to partslist
+		newHead.GetComponent<createTails> ().partsList.Add (newHead);
 		//rotates (90 because that is how tail faces at start)
 		newHead.gameObject.GetComponent<Transform> ().eulerAngles = new Vector3 (0, 0, 0);
 		//colors
 		colorHead (newHead);
 		//names
-		Debug.Log (PlayerPrefs.GetString ("userName"));
 		this.GetComponent<Namer> ().addNameTo (PlayerPrefs.GetString ("userName"), newHead);
 	}
 	void colorHead(GameObject currentHead){

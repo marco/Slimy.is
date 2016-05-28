@@ -15,7 +15,7 @@ public class scorekeeper : MonoBehaviour {
 	private float boostTimer;
 	public float secondsBetweenBoostPenalty;
 	public int boostPenalty;
-	private GameObject theScoreBoard;
+	public GameObject theScoreBoard;
 	public headAndTailMover headAndTailMoverScript;
 
 	// Use this for initialization
@@ -60,6 +60,8 @@ public class scorekeeper : MonoBehaviour {
 		}
 		//if it's the player
 		if (this.gameObject.tag == "player") {
+			//makes sure it has the scoreboard
+			theScoreBoard = GameObject.Find("Score");
 			//adds
 			currentScore += amountToAdd;
 			//gets component from using UnityEngine.UI (and also uses function to convert to string)
