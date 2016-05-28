@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 420158}
   - 23: {fileID: 2305146}
   - 102: {fileID: 10265734}
+  - 114: {fileID: 11473658}
   m_Layer: 5
   m_Name: nameText
   m_TagString: Untagged
@@ -74,6 +75,18 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 3008121932
+--- !u!114 &11473658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4aab4903dcf44c0b81276a58302deba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theBackground: {fileID: 120934, guid: d9e40ae536cad4d60a834d0e011c88d9, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -89,6 +102,10 @@ Prefab:
       propertyPath: m_Color.rgba
       value: 3008121932
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: theBackground
+      value: 
+      objectReference: {fileID: 120934, guid: d9e40ae536cad4d60a834d0e011c88d9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195154}
