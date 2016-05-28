@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11432376}
   - 114: {fileID: 11410264}
   - 114: {fileID: 11412388}
+  - 114: {fileID: 11417550}
   m_Layer: 9
   m_Name: background
   m_TagString: Untagged
@@ -69,6 +70,55 @@ MonoBehaviour:
   createStartingAIScript: {fileID: 11432376}
   headsPrefab: {fileID: 0}
   startingPosition: {x: 0, y: 0}
+--- !u!114 &11417550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1837848d3ca04e1ba7a0cf74c8ea21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjectivesList:
+  - Luscious
+  - Moldy
+  - Bootylicious
+  - Spherical
+  - Leafy
+  - Wet
+  - Plump
+  - Corporate
+  - Cheeky
+  - On Fleek
+  - Succulent
+  - Suck My
+  - Savage
+  - Flabby
+  - Squishy
+  - Mobile
+  - Dank
+  nounsList:
+  - Keychain
+  - Fart
+  - Wheel
+  - Feet
+  - Eyebrows
+  - Earlobe
+  - Lips
+  - Follicle
+  - Kneecap
+  - Wenis
+  - Sponge
+  - Sausage
+  - Nose Hair
+  - Pits
+  - Flabs
+  - Belly Button
+  - Memes
+  zValToAddToName: 0
+  namePrefab: {fileID: 195154, guid: cc67a009a555240ce92cbd7e21368631, type: 2}
 --- !u!114 &11432376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,7 +155,7 @@ MonoBehaviour:
   amountOfAIPerRound: 2
   secondsBetweenRounds: 8
   zValToAddToName: .00999999978
-  nameCanvas: {fileID: 0}
+  startingAIScore: 100
 --- !u!212 &21234058
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -128,7 +178,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -186323899
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 94afefef643a646feb4be8e8b6f91b0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

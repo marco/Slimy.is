@@ -87,7 +87,7 @@ public class collisionChecker : MonoBehaviour {
 	void thisKilled(){
 		if(this.gameObject.tag == "AI"){
 			//get the current tails and pass them into this function to make chunks at their location
-			createChunksScript.createChunksInList(currentHeadPartsList);
+			createChunksScript.createChunksInListWithColor(currentHeadPartsList, this.GetComponent<SpriteRenderer>().color);
 			Destroy(this.gameObject);
 		}
 		else if(this.gameObject.tag == "player"){

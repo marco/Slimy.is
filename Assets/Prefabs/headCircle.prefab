@@ -110,7 +110,7 @@ MonoBehaviour:
   AIMoverScript: {fileID: 11425064}
   boostMultiplier: 2
   currentBoost: 1
-  minimumScoreToBoost: 0
+  minimumScoreToBoost: 5
   scorekeeperScript: {fileID: 11452606}
 --- !u!114 &11452606
 MonoBehaviour:
@@ -126,8 +126,8 @@ MonoBehaviour:
   currentScore: 0
   createTailsScript: {fileID: 11477050}
   scoreForNewTail: 5
-  secondsBetweenBoostPenalty: 1
-  boostPenalty: 1
+  secondsBetweenBoostPenalty: .200000003
+  boostPenalty: 2
   headAndTailMoverScript: {fileID: 11436978}
 --- !u!114 &11477050
 MonoBehaviour:
@@ -405,11 +405,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: boostPenalty
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: secondsBetweenBoostPenalty
-      value: 1
+      value: .200000003
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: currentBoost
@@ -422,6 +422,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Text
       value: oijaosidjf o
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: minimumScoreToBoost
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -126,14 +126,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11432376, guid: d9e40ae536cad4d60a834d0e011c88d9, type: 2}
-      propertyPath: nameCanvas
-      value: 
-      objectReference: {fileID: 1904413683}
-    - target: {fileID: 21234058, guid: d9e40ae536cad4d60a834d0e011c88d9, type: 2}
-      propertyPath: m_SortingLayerID
-      value: -186323899
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9e40ae536cad4d60a834d0e011c88d9, type: 2}
   m_IsPrefabParent: 0
@@ -340,6 +332,87 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &813296267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 813296268}
+  - 222: {fileID: 813296270}
+  - 114: {fileID: 813296269}
+  - 114: {fileID: 813296271}
+  m_Layer: 5
+  m_Name: YouAre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &813296268
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 813296267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2078178979}
+  m_RootOrder: 3
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -136.199997, y: -23.5}
+  m_SizeDelta: {x: 258.100006, y: 47}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &813296269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 813296267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: .600000024}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: cf86cb796085a45ad88c742352d03abf, type: 3}
+    m_FontSize: 21
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 2
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'You are #9
+
+'
+--- !u!222 &813296270
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 813296267}
+--- !u!114 &813296271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 813296267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95abee1cd8dc347b4a72749cdbe503df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillerText: 'You are #'
 --- !u!1 &838790706
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c3c865782347f41b6358d9fba14b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementRange: 25
+  MovementRange: 30
   axesToUse: 0
   horizontalAxisName: Horizontal
   verticalAxisName: Vertical
@@ -586,7 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: .603861928}
+  m_Color: {r: 0, g: 0, b: 0, a: .600000024}
   m_FontData:
     m_Font: {fileID: 12800000, guid: cf86cb796085a45ad88c742352d03abf, type: 3}
     m_FontSize: 72
@@ -620,7 +693,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -56}
+  m_AnchoredPosition: {x: 0, y: -46}
   m_SizeDelta: {x: 530, y: 92}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1856769383
@@ -708,145 +781,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1 &1904413680
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1904413684}
-  - 223: {fileID: 1904413683}
-  - 114: {fileID: 1904413682}
-  - 114: {fileID: 1904413681}
-  - 114: {fileID: 1904413685}
-  m_Layer: 5
-  m_Name: NameCanvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1904413681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1904413680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1904413682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1904413680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &1904413683
-Canvas:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1904413680}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_RenderMode: 2
-  m_Camera: {fileID: 1856769387}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!224 &1904413684
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1904413680}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -.00100000005, y: 0}
-  m_SizeDelta: {x: 117.617996, y: 67.9990005}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1904413685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1904413680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1837848d3ca04e1ba7a0cf74c8ea21e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  adjectivesList:
-  - Dank
-  - Luscious
-  - Moldy
-  - Bootylicious
-  - Spherical
-  - Leafy
-  - Wet
-  - Plump
-  - Corporate
-  - Cheeky
-  - On Fleek
-  - Succulent
-  - Suck My
-  - Savage
-  - Flabby
-  - Squishy
-  - Mobile
-  nounsList:
-  - Keychain
-  - Fart
-  - Wheel
-  - Feet
-  - Eyebrows
-  - Earlobe
-  - Lips
-  - Follicle
-  - Kneecap
-  - Wenis
-  - Sponge
-  - Sausage
-  - Nose Hair
-  - Pits
-  - Flabs
-  - Bellybutton
-  - Memes
-  zValToAddToName: -.00999999978
-  namePrefab: {fileID: 195154, guid: cc67a009a555240ce92cbd7e21368631, type: 2}
 --- !u!1 &2078178978
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +812,7 @@ RectTransform:
   - {fileID: 1256797325}
   - {fileID: 838790707}
   - {fileID: 758033119}
+  - {fileID: 813296268}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}

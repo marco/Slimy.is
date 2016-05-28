@@ -17,7 +17,7 @@ public class createStartingAI : MonoBehaviour {
 	public float secondsBetweenRounds;
 	private float timer = 0;
 	public float zValToAddToName;
-	public Canvas nameCanvas;
+	public int startingAIScore;
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +44,8 @@ public class createStartingAI : MonoBehaviour {
 	public void createANewHead(int currentHead){
 		//new head position
 		Vector3 currentPosition;
+		//currentStartingScore
+		int currentStartingScore;
 		//if we want a random one...
 		if (currentHead == -1) {
 			//gets random location
@@ -56,10 +58,14 @@ public class createStartingAI : MonoBehaviour {
 			float rand0To1Y = Random.Range (-halfMapY, halfMapY);
 			//makes a vector3 out of values
 			currentPosition = new Vector3 (rand0To1X, rand0To1Y, 0);
+			currentStartingScore = 0;
+		
 		}
 		else {
 			//finds position for new head
 			currentPosition = startingPositions [currentHead];
+			//sets beginning score for beginniing ai
+			currentStartingScore = startingAIScore;
 		}
 		//does these things no matter what
 		//creates head & tags & adds to list
@@ -68,6 +74,8 @@ public class createStartingAI : MonoBehaviour {
 		AIList.Add (newHead);
 		//rotates (90 because that is how tail faces at start)
 		newHead.gameObject.GetComponent<Transform> ().eulerAngles = new Vector3 (0, 0, 90);
+		//scores
+		newHead.gameObject.GetComponent<scorekeeper>().currentScore = currentStartingScore;
 		//colors
 		colorHead (newHead);
 		//names
@@ -80,8 +88,8 @@ public class createStartingAI : MonoBehaviour {
 		headSprite.color = AIColors [Random.Range(0, AIColors.Count - 1)];
 	}
 	void addName(GameObject currentHead){
-		string theName = nameCanvas.GetComponent<Namer>().nameReturner();
-		nameCanvas.GetComponent<Namer>().addNameTo(theName, currentHead);
+		string theName = this.GetComponent<Namer>().nameReturner();
+		this.GetComponent<Namer>().addNameTo(theName, currentHead);
 	}
 	void colorNewAI(GameObject newHead){
 		SpriteRenderer headSprite = newHead.GetComponent<SpriteRenderer>();

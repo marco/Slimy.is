@@ -19,7 +19,7 @@ public class Namer : MonoBehaviour {
 		string randAdj = adjectivesList [randAdjNum];
 		string randNoun = nounsList [randNounNum];
 		//final (with space)
-		string finalCombination = randAdj + " " +randNoun;
+		string finalCombination = randAdj + " " + randNoun;
 		//returns
 		return finalCombination;
 	}
