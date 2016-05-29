@@ -2,24 +2,18 @@
 using System.Collections;
 using UnityEngine.Advertisements;
 
-public class ForcedAdManager : MonoBehaviour {
+public class OptionalAdManager : MonoBehaviour {
 	
 	public string gameId;
 	public bool enableTest;
-	public int randRange;
+	public string zone;
+	public int scoreForWatchingAdd;
 
-	
-	void Start(){
+	public void adPressed(){
 		//gets ad ready
 		Advertisement.Initialize (gameId, enableTest);
-		
-		//gets a random number in range
-		int randomNum = Random.Range (0, randRange);
-		//checks if we should display ad
-		if (randomNum == 0) {
-			//idk
-			StartCoroutine("startAdShow");
-		}
+		//starts
+		StartCoroutine("startAdShow");
 	}
 	
 	IEnumerator startAdShow(){
@@ -29,6 +23,8 @@ public class ForcedAdManager : MonoBehaviour {
 			yield return null;
 		}
 		//then finally
-		Advertisement.Show();
+		Advertisement.Show(zone);
+		//add to score
+		PlayerPrefs.SetInt ("extraScore", scoreForWatchingAdd);
 	}
 }

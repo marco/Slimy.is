@@ -7,7 +7,7 @@ public class ForcedAdManager : MonoBehaviour {
 	public string gameId;
 	public bool enableTest;
 	public int randRange;
-
+	public string zone;
 
 	void Start(){
 		//gets ad ready
@@ -29,6 +29,6 @@ public class ForcedAdManager : MonoBehaviour {
 			yield return null;
 		}
 		//then finally
-		Advertisement.Show();
+		Advertisement.Show(zone);
 	}
 }

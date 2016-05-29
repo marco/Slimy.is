@@ -21,6 +21,10 @@ public class scorekeeper : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		theScoreBoard = GameObject.Find("Score");
+		//gives score from ad 
+		addToCurrentScore (PlayerPrefs.GetInt ("extraScore"));
+		//sets back to 0
+		PlayerPrefs.SetInt ("extraScore", 0);
 	}
 	
 	// Update is called once per frame
