@@ -91,6 +91,7 @@ MonoBehaviour:
   currentBoost: 1
   minimumScoreToBoost: 5
   scorekeeperScript: {fileID: 11473154}
+  boostLerpMultiply: 1.5
 --- !u!114 &11420172
 MonoBehaviour:
   m_ObjectHideFlags: 1

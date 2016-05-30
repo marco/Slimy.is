@@ -18,6 +18,8 @@ public class headAndTailMover : MonoBehaviour {
 	public float currentBoost;
 	public float minimumScoreToBoost;
 	public scorekeeper scorekeeperScript;
+	public float boostLerpMultiply;
+	private float currentBoostLerpMultiply;
 
 	void Start () {
 		//gets list of tails from createTailsScript
@@ -31,10 +33,12 @@ public class headAndTailMover : MonoBehaviour {
 		if (CrossPlatformInputManager.GetButton ("Boost") == true && scorekeeperScript.currentScore >= minimumScoreToBoost) {
 			//make the current boost into the maximum
 			currentBoost = boostMultiplier;
+			currentBoostLerpMultiply = boostLerpMultiply;
 		}
 		else {
 			//make it have no multiplier
 			currentBoost = 1;
+			currentBoostLerpMultiply = 1;
 		}
 		//adds to heads (goes automatically because because it is "forwards" and "Space.Self")
 		//moves camera with it, if player
@@ -81,6 +85,6 @@ public class headAndTailMover : MonoBehaviour {
 		Vector3 tailToFollowVector = tailToFollow.gameObject.GetComponent<Transform> ().position;
 		//calculates difference between original and second
 		//goes in the amount of speed per frame. amount multiplied is how close or far the tails are (1 is a whole tail away, 2 is half-way, etc.)
-		tailToMove.gameObject.GetComponent<Transform>().position = new Vector2(Mathf.Lerp(tailToMoveVector.x, tailToFollowVector.x, speedPerUpdate * amountToMultiplyLerp * currentBoost), Mathf.Lerp(tailToMoveVector.y, tailToFollowVector.y, speedPerUpdate * amountToMultiplyLerp * currentBoost));
+		tailToMove.gameObject.GetComponent<Transform>().position = new Vector2(Mathf.Lerp(tailToMoveVector.x, tailToFollowVector.x, speedPerUpdate * amountToMultiplyLerp * currentBoostLerpMultiply), Mathf.Lerp(tailToMoveVector.y, tailToFollowVector.y, speedPerUpdate * amountToMultiplyLerp * currentBoostLerpMultiply));
 	}
 }
