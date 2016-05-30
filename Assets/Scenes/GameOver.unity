@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameId: 1075676
   enableTest: 1
-  randRange: 7
+  randRange: 4
   zone: video
 --- !u!114 &2004629564
 MonoBehaviour:
