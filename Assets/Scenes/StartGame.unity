@@ -499,10 +499,10 @@ RectTransform:
   - {fileID: 2043383064}
   m_Father: {fileID: 1728646335}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 59, y: -4.2}
-  m_SizeDelta: {x: -140, y: 30.9}
+  m_AnchoredPosition: {x: 95, y: -2}
+  m_SizeDelta: {x: 181, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235654624
 MonoBehaviour:
@@ -875,10 +875,10 @@ RectTransform:
   - {fileID: 1235654623}
   m_Father: {fileID: 1521223597}
   m_RootOrder: 3
-  m_AnchorMin: {x: 0.29381445, y: 0.5823261}
-  m_AnchorMax: {x: 0.7061856, y: 0.663337}
-  m_AnchoredPosition: {x: 13.9, y: 0}
-  m_SizeDelta: {x: 118.5, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.642}
+  m_AnchorMax: {x: 0.5, y: 0.642}
+  m_AnchoredPosition: {x: -92, y: 0.48999977}
+  m_SizeDelta: {x: 95, y: 43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2004629561
 GameObject:
