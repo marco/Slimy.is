@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c3c865782347f41b6358d9fba14b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementRange: 25
+  MovementRange: 35
   axesToUse: 0
   horizontalAxisName: Horizontal
   verticalAxisName: Vertical
