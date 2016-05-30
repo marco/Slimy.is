@@ -13,9 +13,6 @@ public class createStartingAI : MonoBehaviour {
 	public List<Color> AIColors;
 	public GameObject headsPrefab;
 	public GameObject namePrefab;
-	public int amountOfAIPerRound;
-	public float secondsBetweenRounds;
-	private float timer = 0;
 	public float zValToAddToName;
 	public int startingAIScore;
 
@@ -29,14 +26,15 @@ public class createStartingAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		//removes time that has past from timer (time since last frame)
-		timer += Time.deltaTime;
-		if (timer >= secondsBetweenRounds) {
-			for(int i = 0; i < amountOfAIPerRound; i++){
-				//timer goes back to 0
-				timer = 0;
-				//creates a new, random head (-1 for random)
-				createANewHead(-1);
+		//if some have died
+		if (GameObject.FindGameObjectsWithTag ("AI").Length < startingAmount) {
+			//get the amount that have died
+			int amountLeftOver = startingAmount - GameObject.FindGameObjectsWithTag ("AI").Length;
+			Debug.Log (amountLeftOver);
+			//go through them all
+			for (int a = 0; a < amountLeftOver; a++) {
+				//& make a head
+				createANewHead (-1);
 			}
 		}
 	}
