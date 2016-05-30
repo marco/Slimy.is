@@ -36,6 +36,6 @@ public class createPlayer : MonoBehaviour {
 		//gets sprite rendering part and changes the color value
 		//"(typeof(SpriteRenderer)) as SpriteRenderer" makes sure there are no errors
 		SpriteRenderer headSprite = currentHead.GetComponent<SpriteRenderer>();
-		//headSprite.color = AIColors [currentHead];
+		headSprite.color = createStartingAIScript.AIColors [Random.Range (0, createStartingAIScript.AIColors.Count)];
 	}
 }
