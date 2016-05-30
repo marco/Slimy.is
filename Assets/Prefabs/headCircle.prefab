@@ -32,9 +32,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107930}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
-  m_LocalPosition: {x: -2.84338093, y: .957366824, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
+  m_LocalPosition: {x: -2.843381, y: 0.9573668, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,7 +46,8 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107930}
-  m_Mass: 9.99999975e-05
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -61,6 +63,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107930}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
@@ -78,11 +81,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03306f001639a4b978f683e00d5b9780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedPerUpdate: .200000003
+  speedPerUpdate: 0.2
   createTailsScript: {fileID: 11460078}
   amountToAddForMovement: 0
   currentMovement: {x: -1, y: 0, z: 0}
-  amountToMultiplyLerp: 1.39999998
+  amountToMultiplyLerp: 1.4
   AIMoverScript: {fileID: 11420172}
   boostMultiplier: 2
   currentBoost: 1
@@ -137,7 +140,7 @@ MonoBehaviour:
   minimumParts: 5
   partsList: []
   tailsPrefab: {fileID: 122354, guid: 16c962a1ef7c448769473cd46b8b440e, type: 2}
-  newTailOffset: .5
+  newTailOffset: 0.5
 --- !u!114 &11473154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,8 +155,9 @@ MonoBehaviour:
   currentScore: 0
   createTailsScript: {fileID: 11460078}
   scoreForNewTail: 5
-  secondsBetweenBoostPenalty: .200000003
-  boostPenalty: 2
+  secondsBetweenBoostPenalty: 0.3
+  boostPenalty: 1
+  theScoreBoard: {fileID: 0}
   headAndTailMoverScript: {fileID: 11419052}
 --- !u!114 &11493318
 MonoBehaviour:
@@ -200,14 +204,18 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1563211857
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3ab105001c0fb4f1a849d9a47bca88f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!222 &22292614
 CanvasRenderer:
   m_ObjectHideFlags: 1
