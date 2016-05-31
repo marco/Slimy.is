@@ -20,18 +20,11 @@ public class createDots : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		//removes time that has past from timer (time since last frame)
-		timer += Time.deltaTime;
-		if (timer >= secondsBetweenRounds) {
-			//goes back to 0
-			timer = 0;
-			//gets all current dots
-			GameObject[] dotsArray = GameObject.FindGameObjectsWithTag("dot");
-			//sees if we need to add some
-			if(dotsArray.Length < amountOfDotsPerRound){
-				//adds them 
-				addDots(amountOfDotsPerRound - dotsArray.Length);
-			}
+		if (GameObject.FindGameObjectsWithTag ("dot").Length < amountOfDotsPerRound) {
+			//get the amount that have died
+			int amountLeftOver = amountOfDotsPerRound - GameObject.FindGameObjectsWithTag ("dot").Length;
+			//go through them all
+			addDots (amountLeftOver);
 		}
 	}
 	void addDots(int amountToAdd){
