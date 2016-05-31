@@ -7,7 +7,7 @@ public class OptionalAdManager : MonoBehaviour {
 	public string gameId;
 	public bool enableTest;
 	public string zone;
-	public int scoreForWatchingAdd;
+	public int scoreForWatchingAd;
 
 	public void adPressed(){
 		//gets ad ready
@@ -25,6 +25,6 @@ public class OptionalAdManager : MonoBehaviour {
 		//then finally
 		Advertisement.Show(zone);
 		//add to score
-		PlayerPrefs.SetInt ("extraScore", scoreForWatchingAdd);
+		PlayerPrefs.SetInt ("extraScore", scoreForWatchingAd);
 	}
 }
