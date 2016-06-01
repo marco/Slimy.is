@@ -14,6 +14,7 @@ public class AIMover : MonoBehaviour {
 	public headAndTailMover headAndTailMoverScript;
 	private float speedPerUpdate;
 	public scorekeeper scorekeeperScript;
+	public bool AICanBoost;
 
 	public void calculateHead(GameObject head){
 		//gets speed
@@ -26,7 +27,7 @@ public class AIMover : MonoBehaviour {
 			//if there is a viable chunk...
 			if(getBestChunk(chunksArray) != null){
 				itemGoingTo = getBestChunk(chunksArray);
-				if(scorekeeperScript.currentScore >= headAndTailMoverScript.minimumScoreToBoost){
+				if(scorekeeperScript.currentScore >= headAndTailMoverScript.minimumScoreToBoost && AICanBoost){
 					headAndTailMoverScript.currentBoost = headAndTailMoverScript.boostMultiplier;
 				}
 			}
@@ -36,9 +37,6 @@ public class AIMover : MonoBehaviour {
 				headAndTailMoverScript.currentBoost = 1;
 			}
 		}
-
-
-
 		//gets Vector2 of itemGoingTo
 		Vector2 itemGoingToVector2 = itemGoingTo.gameObject.GetComponent<Transform> ().position;
 		//gets Vector2 of AI
@@ -48,43 +46,31 @@ public class AIMover : MonoBehaviour {
 	}
 
 	GameObject getBestChunk(GameObject[] chunkList){
-		//current closest object
-		GameObject currentBest = null;
-		//the distance of closest object (gets smaller over time)
-		float currentBestDistance = Mathf.Infinity;
 		//goes through every one
 		for (int i = 0; i < chunkList.Length; i++) {
 			//finds distance between AI and dot
 			float distanceBetween = Vector3.Distance(chunkList[i].GetComponent<Transform>().position, this.gameObject.GetComponent<Transform>().position);
-			//if the distance is LESS than the PREVIOUS best distance, we must have a BETTER match! AND it has to be MORE than the MINIMUM distance
-			if (distanceBetween < currentBestDistance && distanceBetween >= minChunkDistance && distanceBetween <= maxChunkDistance){
+			//if the distance is less than the maximum, and more than the minimum, return it
+			if (distanceBetween >= minChunkDistance && distanceBetween <= maxChunkDistance){
 				//change the current one to go for to be this one
-				currentBest = chunkList[i];
-				//make the new record equal to this one
-				currentBestDistance = distanceBetween;
+				return chunkList[i];
 			}
 		}
-		//send out the winner
-		return currentBest;
+		//send out nothing if it hasn't been found yet
+		return null;
 	}
 	GameObject getBestDot(GameObject[] dotList){
-		//current closest object
-		GameObject currentBest = null;
-		//the distance of closest object (gets smaller over time)
-		float currentBestDistance = Mathf.Infinity;
 		//goes through every one
 		for (int i = 0; i < dotList.Length; i++) {
 			//finds distance between AI and dot
 			float distanceBetween = Vector3.Distance(dotList[i].GetComponent<Transform>().position, this.gameObject.GetComponent<Transform>().position);
-			//if the distance is LESS than the PREVIOUS best distance, we must have a BETTER match! AND it has to be MORE than the MINIMUM distance
-			if (distanceBetween < currentBestDistance && distanceBetween >= minDotDistance && distanceBetween <= maxDotDistance){
+			//if the distance is less than the maximum, and more than the minimum, return it
+			if (distanceBetween >= minDotDistance && distanceBetween <= maxDotDistance){
 				//change the current one to go for to be this one
-				currentBest = dotList[i];
-				//make the new record equal to this one
-				currentBestDistance = distanceBetween;
+				return dotList[i];
 			}
 		}
-		//send out the winner
-		return currentBest;
+		//send out nothing if it hasn't been found yet
+		return null;
 	}
 }
