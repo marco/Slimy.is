@@ -27,9 +27,9 @@ public class youAreChecker : MonoBehaviour {
 		return amountBetter + 1;
 	}
 	void Update(){
-		//adds intro text, then gets amount of place
-		if (this.tag == "player") {
-			this.GetComponent<Text> ().text = fillerText + findCurrentNumber (GameObject.FindGameObjectWithTag ("player"));
-		}
+		//gets variable
+		GameObject player = GameObject.FindGameObjectWithTag ("player");
+		//sets text based on function
+		this.GetComponent<Text>().text = fillerText + findCurrentNumber (player);
 	}
 }

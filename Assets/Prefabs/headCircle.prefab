@@ -103,12 +103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3858deae56d3b4610959e7c986a52836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxChunkDistance: 10
-  maxDotDistance: 100
+  maxChunkDistance: 50
+  maxDotDistance: 10
   minChunkDistance: 0
   minDotDistance: 0
   headAndTailMoverScript: {fileID: 11419052}
   scorekeeperScript: {fileID: 11473154}
+  AICanBoost: 0
 --- !u!114 &11421924
 MonoBehaviour:
   m_ObjectHideFlags: 1
