@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,18 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd5ecadf78464afcbebbd7f535e4a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfDotsPerRound: 1000
-  secondsBetweenRounds: 3
+  amountOfDotsPerRound: 200
   map: {fileID: 120934}
   dotColors:
-  - {r: .280403554, g: .794610739, b: 1, a: 1}
-  - {r: .260712087, g: 1, b: .524481833, a: 1}
-  - {r: .992570043, g: .633144915, b: .221020564, a: 1}
-  - {r: .986153364, g: .129951417, b: .781299114, a: 1}
-  - {r: 1, g: .99176532, b: .222515672, a: 1}
-  - {r: .217051774, g: .294928581, b: .998369336, a: 1}
-  - {r: .614500999, g: 0, b: .996567726, a: 1}
-  - {r: .126284167, g: .988620162, b: .994697094, a: 1}
+  - {r: 0.28040355, g: 0.79461074, b: 1, a: 1}
+  - {r: 0.2607121, g: 1, b: 0.52448183, a: 1}
+  - {r: 0.99257004, g: 0.6331449, b: 0.22102056, a: 1}
+  - {r: 0.98615336, g: 0.12995142, b: 0.7812991, a: 1}
+  - {r: 1, g: 0.9917653, b: 0.22251567, a: 1}
+  - {r: 0.21705177, g: 0.29492858, b: 0.99836934, a: 1}
+  - {r: 0.614501, g: 0, b: 0.9965677, a: 1}
+  - {r: 0.12628417, g: 0.98862016, b: 0.9946971, a: 1}
   dotPrefab: {fileID: 185760, guid: 9ec960efa12fb41bb823cf02694423cb, type: 2}
 --- !u!114 &11412388
 MonoBehaviour:
@@ -143,19 +143,17 @@ MonoBehaviour:
   - {x: -10, y: 10}
   - {x: -10, y: -10}
   AIColors:
-  - {r: .280403554, g: .794610739, b: 1, a: 1}
-  - {r: .260712087, g: 1, b: .524481833, a: 1}
-  - {r: .992570043, g: .633144915, b: .221020564, a: 1}
-  - {r: .986153364, g: .129951417, b: .781299114, a: 1}
-  - {r: 1, g: .99176532, b: .222515672, a: 1}
-  - {r: .217051774, g: .294928581, b: .998369336, a: 1}
-  - {r: .614500999, g: 0, b: .996567726, a: 1}
-  - {r: .126284167, g: .988620162, b: .994697094, a: 1}
+  - {r: 0.28040355, g: 0.79461074, b: 1, a: 1}
+  - {r: 0.2607121, g: 1, b: 0.52448183, a: 1}
+  - {r: 0.99257004, g: 0.6331449, b: 0.22102056, a: 1}
+  - {r: 0.98615336, g: 0.12995142, b: 0.7812991, a: 1}
+  - {r: 1, g: 0.9917653, b: 0.22251567, a: 1}
+  - {r: 0.21705177, g: 0.29492858, b: 0.99836934, a: 1}
+  - {r: 0.614501, g: 0, b: 0.9965677, a: 1}
+  - {r: 0.12628417, g: 0.98862016, b: 0.9946971, a: 1}
   headsPrefab: {fileID: 107930, guid: a34274621fdd2428fa24c3010c4cece1, type: 2}
   namePrefab: {fileID: 195154, guid: cc67a009a555240ce92cbd7e21368631, type: 2}
-  amountOfAIPerRound: 2
-  secondsBetweenRounds: 8
-  zValToAddToName: .00999999978
+  zValToAddToName: 0.01
   startingAIScore: 100
 --- !u!212 &21234058
 SpriteRenderer:
@@ -175,14 +173,18 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -186323899
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 94afefef643a646feb4be8e8b6f91b0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

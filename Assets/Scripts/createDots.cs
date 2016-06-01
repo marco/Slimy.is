@@ -6,8 +6,6 @@ using System.Linq;
 public class createDots : MonoBehaviour {
 
 	public int amountOfDotsPerRound;
-	public float secondsBetweenRounds;
-	private float timer = 0;
 	public GameObject map;
 	public List<Color> dotColors;
 	public GameObject dotPrefab;
@@ -15,7 +13,6 @@ public class createDots : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//so we get a first batch
-		timer = secondsBetweenRounds;
 	}
 	
 	// Update is called once per frame
