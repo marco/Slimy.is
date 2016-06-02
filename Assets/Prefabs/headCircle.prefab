@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3858deae56d3b4610959e7c986a52836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxChunkDistance: 20
+  maxChunkDistance: 10
   maxDotDistance: 10
   minChunkDistance: 0
   minDotDistance: 0
