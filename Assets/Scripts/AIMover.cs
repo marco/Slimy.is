@@ -16,7 +16,7 @@ public class AIMover : MonoBehaviour {
 	public scorekeeper scorekeeperScript;
 	public bool AICanBoost;
 
-	public void calculateHead(GameObject head){
+	public void calculateHead(GameObject head, int addToDotRange = 0){
 		//gets speed
 		speedPerUpdate = headAndTailMoverScript.speedPerUpdate;
 		//it becomes null if destroyed, so...
@@ -25,15 +25,15 @@ public class AIMover : MonoBehaviour {
 			GameObject[] dotsArray = GameObject.FindGameObjectsWithTag("dot");
 			GameObject[] chunksArray = GameObject.FindGameObjectsWithTag("chunk");
 			//if there is a viable chunk...
-			if(getBestChunk(randomizeList(chunksArray.ToList()).ToArray()) != null){
-				itemGoingTo = getBestChunk(chunksArray);
+			if(getBestChunk(randomizeList(chunksArray.ToList()).ToArray(), minChunkDistance, maxChunkDistance) != null){
+				itemGoingTo = getBestChunk (randomizeList (chunksArray.ToList ()).ToArray (), minChunkDistance, maxChunkDistance);
 				if(scorekeeperScript.currentScore >= headAndTailMoverScript.minimumScoreToBoost && AICanBoost){
 					headAndTailMoverScript.currentBoost = headAndTailMoverScript.boostMultiplier;
 				}
 			}
 			//if not, go with a dot
-			else if(getBestDot(randomizeList(dotsArray.ToList()).ToArray()) != null){
-				itemGoingTo = getBestDot(randomizeList(dotsArray.ToList()).ToArray());
+			else if(getBestDot(randomizeList(dotsArray.ToList()).ToArray(), minDotDistance, maxDotDistance + addToDotRange) != null){
+				itemGoingTo = getBestDot (randomizeList (dotsArray.ToList ()).ToArray (), minDotDistance, maxDotDistance + addToDotRange);
 				headAndTailMoverScript.currentBoost = 1;
 			}
 		}
@@ -46,15 +46,19 @@ public class AIMover : MonoBehaviour {
 			//moves towards
 			head.GetComponent<Transform> ().position = Vector2.MoveTowards (AIVector2, itemGoingToVector2, speedPerUpdate / headAndTailMoverScript.currentBoost);
 		}
+		else {
+			//redoes it, with a bigger range
+			calculateHead(head, addToDotRange + 1);
+		}
 	}
 
-	GameObject getBestChunk(GameObject[] chunkList){
+	GameObject getBestChunk(GameObject[] chunkList, float rangeMin, float rangeMax){
 		//goes through every one
 		for (int i = 0; i < chunkList.Length; i++) {
 			//finds distance between AI and dot
 			float distanceBetween = Vector3.Distance(chunkList[i].GetComponent<Transform>().position, this.gameObject.GetComponent<Transform>().position);
 			//if the distance is less than the maximum, and more than the minimum, return it
-			if (distanceBetween >= minChunkDistance && distanceBetween <= maxChunkDistance){
+			if (distanceBetween >= rangeMin && distanceBetween <= rangeMax){
 				//change the current one to go for to be this one
 				return chunkList[i];
 			}
@@ -62,13 +66,13 @@ public class AIMover : MonoBehaviour {
 		//send out nothing if it hasn't been found yet
 		return null;
 	}
-	GameObject getBestDot(GameObject[] dotList){
+	GameObject getBestDot(GameObject[] dotList, float rangeMin, float rangeMax){
 		//goes through every one
 		for (int i = 0; i < dotList.Length; i++) {
 			//finds distance between AI and dot
 			float distanceBetween = Vector3.Distance(dotList[i].GetComponent<Transform>().position, this.gameObject.GetComponent<Transform>().position);
 			//if the distance is less than the maximum, and more than the minimum, return it
-			if (distanceBetween >= minDotDistance && distanceBetween <= maxDotDistance){
+			if (distanceBetween >= rangeMin && distanceBetween <= rangeMax){
 				//change the current one to go for to be this one
 				return dotList[i];
 			}
