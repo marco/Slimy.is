@@ -25,7 +25,7 @@ public class AIMover : MonoBehaviour {
 			GameObject[] dotsArray = GameObject.FindGameObjectsWithTag("dot");
 			GameObject[] chunksArray = GameObject.FindGameObjectsWithTag("chunk");
 			//if there is a viable chunk...
-			if(getBestChunk(chunksArray) != null){
+			if(getBestChunk(randomizeList(chunksArray.ToList()).ToArray()) != null){
 				itemGoingTo = getBestChunk(chunksArray);
 				if(scorekeeperScript.currentScore >= headAndTailMoverScript.minimumScoreToBoost && AICanBoost){
 					headAndTailMoverScript.currentBoost = headAndTailMoverScript.boostMultiplier;
@@ -33,7 +33,7 @@ public class AIMover : MonoBehaviour {
 			}
 			//if not, go with a dot
 			else{
-				itemGoingTo = getBestDot(dotsArray);
+				itemGoingTo = getBestDot(randomizeList(dotsArray.ToList()).ToArray());
 				headAndTailMoverScript.currentBoost = 1;
 			}
 		}
@@ -72,5 +72,16 @@ public class AIMover : MonoBehaviour {
 		}
 		//send out nothing if it hasn't been found yet
 		return null;
+	}
+	List<GameObject> randomizeList(List<GameObject> listToRandomize){
+		List<GameObject> newList = listToRandomize;
+		for (int i = 0; i < listToRandomize.Count; i++) {
+			GameObject temp = newList[i];
+			int randomIndex = Random.Range(i, newList.Count);
+			newList[i] = newList[randomIndex];
+			newList[randomIndex] = temp;
+		}
+		return newList;
+
 	}
 }
