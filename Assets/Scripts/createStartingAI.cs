@@ -56,7 +56,8 @@ public class createStartingAI : MonoBehaviour {
 			float rand0To1Y = Random.Range (-halfMapY, halfMapY);
 			//makes a vector3 out of values
 			currentPosition = new Vector3 (rand0To1X, rand0To1Y, 0);
-			currentStartingScore = startingAIScore;
+			currentStartingScore = 0;
+		
 		}
 		else {
 			//finds position for new head
