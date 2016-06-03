@@ -32,20 +32,17 @@ public class AIMover : MonoBehaviour {
 				}
 			}
 			//if not, go with a dot
-			else if(getBestDot(randomizeList(dotsArray.ToList()).ToArray()) != null){
+			else{
 				itemGoingTo = getBestDot(randomizeList(dotsArray.ToList()).ToArray());
 				headAndTailMoverScript.currentBoost = 1;
 			}
 		}
-		//after all of that, if it is set...
-		if (itemGoingTo != null) {
-			//gets Vector2 of itemGoingTo
-			Vector2 itemGoingToVector2 = itemGoingTo.gameObject.GetComponent<Transform> ().position;
-			//gets Vector2 of AI
-			Vector2 AIVector2 = this.gameObject.GetComponent<Transform> ().position;
-			//moves towards
-			head.GetComponent<Transform> ().position = Vector2.MoveTowards (AIVector2, itemGoingToVector2, speedPerUpdate / headAndTailMoverScript.currentBoost);
-		}
+		//gets Vector2 of itemGoingTo
+		Vector2 itemGoingToVector2 = itemGoingTo.gameObject.GetComponent<Transform> ().position;
+		//gets Vector2 of AI
+		Vector2 AIVector2 = this.gameObject.GetComponent<Transform> ().position;
+		//moves towards
+		head.GetComponent<Transform> ().position = Vector2.MoveTowards (AIVector2, itemGoingToVector2, speedPerUpdate / headAndTailMoverScript.currentBoost);
 	}
 
 	GameObject getBestChunk(GameObject[] chunkList){
